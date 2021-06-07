@@ -46,4 +46,7 @@ The workflow below shows the way in which the services communicate together to b
 
 ![image](https://user-images.githubusercontent.com/70802911/121028956-1f5fd100-c7a0-11eb-83bf-6bd265f2f4d9.png)
 
+**Project Tracking**
 
+Jira was used to track the progress of my project and allowed me to look at the different parts of the project so I knew what was needed to be done.
+https://farzanaakter1.atlassian.net/secure/RapidBoard.jspa?projectKey=PPS&useStoredSettings=true&rapidView=4&atlOrigin=eyJpIjoiOWIwZjE4MWU1YTQyNDNkZTk1ZmI5ZGY4YzgyMTczMjMiLCJwIjoiaiJ9
