@@ -28,16 +28,13 @@ This will be one of two services that will generate the random "object". In this
 
 Service 3
 
-This will be one of two services that will generate a random "object". In this case, this service will be pulling an item from an array with several different implementations available:
-- burgers
-- pizza
-- 
+This will be one of two services that will generate a random "object". In this case, this service will be pulling an item from an array. The items in the array will be colours. 
 
 Service 4
 
 
 **User Journey**
-
+The user will input their name into the frontend and a colour and membership number will be generated for the user.
 
 
 **Architecture**
