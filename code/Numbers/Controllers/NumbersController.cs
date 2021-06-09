@@ -20,7 +20,7 @@ namespace Numbers.Controllers
         public ActionResult<string> Get()
         {
             var rnd = new Random();
-            var returnIndex = rnd.Next(0, 100000);
+            var returnIndex = rnd.Next(0, 9);
             return Numbers[returnIndex].ToString();
         }
     }
