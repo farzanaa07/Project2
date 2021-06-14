@@ -24,16 +24,15 @@ namespace Merge.Controllers
         public async Task<IActionResult> Get()
         {
             //var numbersService = "https://localhost:44307/numbers";
-            var numbersService =$"{Configuration["numbersServiceURL"]}/numbers"; //this is configuration code tha
+            var numbersService = $"{Configuration["numbersServiceURL"]}/numbers"; //this is configuration code tha
             var numbersResponseCall = await new HttpClient().GetStringAsync(numbersService);
             //var coloursService = "https://localhost:44364/colours";
             var coloursService = $"{Configuration["coloursServiceURL"]}/colours";
             var coloursResponseCall = await new HttpClient().GetStringAsync(coloursService);
             // var lettersService = $"https://{Configuration["lettersServiceURL"]}/letters";
-           
+
             var mergedResponse = $"{numbersResponseCall}{coloursResponseCall}";
             return Ok(mergedResponse);
         }
     }
-    }
-
+}
