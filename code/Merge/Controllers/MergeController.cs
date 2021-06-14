@@ -15,6 +15,18 @@ namespace Merge.Controllers
     {
         ///numbersURL: https://localhost:44307/
         ///coloursURL:https://localhost:44364/
+        ///
+        private static readonly int[] PrizeGenerator = new[]
+       {
+            100, 200, 300
+        };
+
+       public string GetPrize()
+        {
+            Random rand = new Random();
+            var returnIndex = rand.Next(0, 3);
+            return PrizeGenerator[returnIndex].ToString();
+        }
         private IConfiguration Configuration; //inject values inside classes by using depedency injection
         public MergeController(IConfiguration configuration)
         {
@@ -30,8 +42,9 @@ namespace Merge.Controllers
             var coloursService = $"{Configuration["coloursServiceURL"]}/colours";
             var coloursResponseCall = await new HttpClient().GetStringAsync(coloursService);
             // var lettersService = $"https://{Configuration["lettersServiceURL"]}/letters";
+            var Prize = GetPrize();
 
-            var mergedResponse = $"{numbersResponseCall}{coloursResponseCall}";
+            var mergedResponse = $"Your number is {numbersResponseCall} and colour is {coloursResponseCall}. This means your prize is of {Prize}";
             return Ok(mergedResponse);
         }
     }
