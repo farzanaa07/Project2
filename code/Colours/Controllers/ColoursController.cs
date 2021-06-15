@@ -11,7 +11,7 @@ namespace Colours.Controllers
     [Route("[controller]")]
     public class ColoursController : ControllerBase
     {
-        private static readonly string[] Colours = new[]
+        public string[] Colour = new[]
         {
             "red", "blue", "green", "purple", "yellow", "orange", "pink"
         };
@@ -21,7 +21,7 @@ namespace Colours.Controllers
         {
             var rnd = new Random();
             var returnIndex = rnd.Next(0, 7);
-            return Colours[returnIndex].ToString();
+            return Colour[returnIndex].ToString();
         }
     }
 }

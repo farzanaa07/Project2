@@ -13,7 +13,7 @@ namespace Numbers.Controllers
     {
         private static readonly int[] Numbers = new[]
          {
-            1,2,3,4,5,6,7,8,9,0
+            1,2,3,4,5,6,7,8,9
         };
 
         [HttpGet]

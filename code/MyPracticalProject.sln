@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{9BE491E1-6295-40F9-887E-1BD37B5B9F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{9BE491E1-6295-40F9-887E-1BD37B5B9F6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numbers", "Numbers\Numbers.csproj", "{540C5A97-DA1B-49B0-9AD2-83C77EFD22F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numbers", "Numbers\Numbers.csproj", "{540C5A97-DA1B-49B0-9AD2-83C77EFD22F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colours", "Colours\Colours.csproj", "{93493EC9-9C0E-4C72-98D2-B9B7B5D994D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Colours", "Colours\Colours.csproj", "{93493EC9-9C0E-4C72-98D2-B9B7B5D994D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merge", "Merge\Merge.csproj", "{126615C6-9DFE-47C4-B9D5-B3D19365F308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Merge", "Merge\Merge.csproj", "{126615C6-9DFE-47C4-B9D5-B3D19365F308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalProjectTesting", "PracticalProjectTesting\PracticalProjectTesting.csproj", "{D2D40A90-B67D-48B0-BB56-73D6C8803792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9BE491E1-6295-40F9-887E-1BD37B5B9F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +71,23 @@ Global
 		{126615C6-9DFE-47C4-B9D5-B3D19365F308}.Release|x64.Build.0 = Release|Any CPU
 		{126615C6-9DFE-47C4-B9D5-B3D19365F308}.Release|x86.ActiveCfg = Release|Any CPU
 		{126615C6-9DFE-47C4-B9D5-B3D19365F308}.Release|x86.Build.0 = Release|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Debug|x64.Build.0 = Debug|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Debug|x86.Build.0 = Debug|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Release|x64.ActiveCfg = Release|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Release|x64.Build.0 = Release|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Release|x86.ActiveCfg = Release|Any CPU
+		{D2D40A90-B67D-48B0-BB56-73D6C8803792}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D250012A-82DF-44E5-86D3-61C94E8126C4}
 	EndGlobalSection
 EndGlobal
