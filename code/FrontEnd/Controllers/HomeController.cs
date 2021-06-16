@@ -15,9 +15,14 @@ namespace FrontEnd.Controllers
 {
     public class HomeController : Controller
     {
+        //private readonly ApplicationDbContext dbContext;
+        //public HomeController(ApplicationDbContext applicationDbContext)
+        //{
+        //    dbContext = applicationDbContext;
+        //}
+    
         private readonly ILogger<HomeController> _logger;
         private IConfiguration Configuration;
-
 
 
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
@@ -32,6 +37,7 @@ namespace FrontEnd.Controllers
             //var mergedService = "https://localhost:44327/merge";
             var mergeResponseCall = await new HttpClient().GetStringAsync(mergedService);
             ViewBag.responseCall = mergeResponseCall;
+
             return View();
         }
 
@@ -48,6 +54,10 @@ namespace FrontEnd.Controllers
                 FirstName = bindingModel.FirstName,
                 LastName = bindingModel.LastName
             };
+            //dbContext.UserInput.Add(userToCreate);
+            //dbContext.SaveChanges();
+            ViewBag.FirstName = userToCreate.FirstName;
+            ViewBag.LastName = userToCreate.LastName;
             return RedirectToAction("Merge");
         }
     }

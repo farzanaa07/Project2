@@ -2,8 +2,77 @@
 @{ ViewData["Title"] = "Home Page"; }
 <html>
 <body>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 75%;
+        }
 
-    <h2>Enter your name to generate your membership number and team colour</h2>
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+    <h2>Enter your name to win a prize!</h2>
+    <p>
+        What do you need to win?
+    </p>
+    <table style="width:75%">
+        <tr>
+            <th>Prize</th>
+            <th>Colour</th>
+            <th>Number</th>
+        </tr>
+        <tr>
+            <td>£100</td>
+            <td>red</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>£100</td>
+            <td>red</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>£200</td>
+            <td>blue</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>£200</td>
+            <td>blue</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>£300</td>
+            <td>green</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>£300</td>
+            <td>green</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>£400</td>
+            <td>purple</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>£400</td>
+            <td>purple</td>
+            <td>4</td>
+        </tr>
+
+    </table>
+    <p>Good luck!</p>
 
     <form asp-action="Merge">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
