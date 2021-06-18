@@ -10,11 +10,11 @@ This means that I must create a functional web application in ASP.Net using C# a
 
 **My web application**
 
-I have produced a web application that consists of 4 services that all function together, with service 1 being able to communicate with the 3 other services. This application will generate two random objects - one of which will be a food type (Eg burgers, pizza etc) and one that will
+I have produced a web application that consists of 4 services that all function together, with service 1 being able to communicate with the 3 other services. This application will generate two random objects - one of which will be a generated number and one that will generate a colour and generate an object that is dependent on the results from the two random objects - this will be a prize. 
 
 Service 1
 
-This acts as the core service that renders the HTML needed to interact with the application. It is responsible for communicating with the other 3 other services. This will be done in MVC C#.
+This acts as the core service that renders the HTML needed to interact with the application. It is responsible for communicating with the other 3 other services. This will be done in MVC C# and will display the random objects as well as the dependent object.
 
 
 
@@ -28,13 +28,15 @@ This will be one of two services that will generate the random "object". In this
 
 Service 3
 
-This will be one of two services that will generate a random "object". In this case, this service will be pulling an item from an array. The items in the array will be colours. 
+This will be one of two services that will generate a random "object". In this case, this service will be pulling an item from an array. The items in the array will be colours.  There will be two implementations available:
+- dark colours
+- light colours
 
 Service 4
 
 
 **User Journey**
-The user will input their name into the frontend and a colour and membership number will be generated for the user.
+The user will input their name into the frontend and a colour and number will be generated for the user. They will need a specific combination of a number and colour to be able to win a prize.
 
 
 **Architecture**
