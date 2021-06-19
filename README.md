@@ -41,7 +41,7 @@ The user will input their name into the frontend and a colour and membership num
 
 The workflow below shows the way in which the services communicate together to be able to generate objects (number and string generator) that merge together.
 
-![image](https://user-images.githubusercontent.com/70802911/121028956-1f5fd100-c7a0-11eb-83bf-6bd265f2f4d9.png)
+![image](https://user-images.githubusercontent.com/70802911/122636415-10064f00-d0e1-11eb-917d-34e957caeee7.png)
 
 **Project Tracking**
 
