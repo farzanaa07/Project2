@@ -11,16 +11,16 @@ namespace Numbers.Controllers
     [Route("[controller]")]
     public class NumbersController : ControllerBase
     {
-        private static readonly int[] Numbers = new[]
+        public int[] Numbers = new[]
          {
-            1,2,3,4,5,6,7,8,9
+            1,2,3,4,5
         };
 
         [HttpGet]
         public ActionResult<string> Get()
         {
             var rnd = new Random();
-            var returnIndex = rnd.Next(0, 9);
+            var returnIndex = rnd.Next(0, 4);
             return Numbers[returnIndex].ToString();
         }
     }
