@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace FrontEnd
+namespace PracticalProjectTesting.Repositories
 {
-    public class UserInput
+    public interface IUserInput
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int ID { get; set; }
     }
 }

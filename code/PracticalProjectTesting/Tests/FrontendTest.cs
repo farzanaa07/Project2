@@ -1,4 +1,11 @@
-﻿using FrontEnd.Controllers;
+﻿using FrontEnd;
+using FrontEnd.Controllers;
+using FrontEnd.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Moq;
+using PracticalProjectTesting.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +16,74 @@ namespace PracticalProjectTesting.Tests
 {
     public class FrontendTest
     {
+        private Mock<IUserInput> userInputMock;
+        private Mock<IRepositoryWrapper> mockRepo;
+        private HomeController homeController;
+        private AddUserBindingModel addUserInput;
+        private UserInput userInput;
+        private readonly ILogger<HomeController> _logger;
+        private AppSettings appSettings = new AppSettings()
+        {
+            mergedServiceURL = "https://farzana-merge.azurewebsites.net"
+        };
+        public FrontendTest()
+        {
+            //mocksetup
+            userInputMock = new Mock<IUserInput>();
+            userInput = new UserInput();
+
+            //sample models
+            addUserInput = new AddUserBindingModel { FirstName = "Harry", LastName = "Smith" };
+
+            //controller setup
+
+            mockRepo = new Mock<IRepositoryWrapper>();
+
+        }
+
+
         [Fact]
         public void UserInputTest()
         {
-        //    //Arrange
-        //    HomeController testNumber = new HomeController();
+            //Arrange
+            var options = new Mock<IOptions<AppSettings>>();
+            options.Setup(x => x.Value).Returns(appSettings);
+            mockRepo.Setup(repo => repo.UserInput.FindByCondition(r => r.ID == It.IsAny<int>())).Returns(GetUserInput());
+
+            //Act
+            homeController = new HomeController(_logger, options.Object, mockRepo.Object);
+
+            var controllerActionResult = homeController.Index(addUserInput);
+
+            //Assert
+            Assert.NotNull(controllerActionResult);
+            Assert.IsType<RedirectToActionResult>(controllerActionResult);
+        }
+        [Fact]
+        public async void GetFrontEndTest()
+        {
 
 
-        //    //// Act
-        //    var testHomeController = testHomeController.Index();
+            var options = new Mock<IOptions<AppSettings>>();
+            options.Setup(x => x.Value).Returns(appSettings);
 
-        //    // Assert
-        //    Assert.NotNull(testHomeController);
-        //    //Assert.IsType<ActionResult<string>>(testNumberController);
-        //}
+            HomeController homeController = new HomeController( _logger,options.Object,mockRepo.Object);
+            var homeContollerResult = await homeController.Merge();
+
+            Assert.NotNull(homeContollerResult);
+            Assert.IsType<OkObjectResult>(homeContollerResult);
+
+
+        }
+
+        private IEnumerable<UserInput>GetUserInput()
+        {
+            var userInputs = new List<UserInput>
+            {new UserInput() { ID = 1, FirstName = "Harry", LastName = "Smith"} };
+        return userInputs;
+    }
+
+
     }
 }
+

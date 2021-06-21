@@ -9,32 +9,27 @@ using FrontEnd.Models;
 using System.Net.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.Options;
+using FrontEnd.Repositories;
 
 namespace FrontEnd.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ApplicationDbContext dbContext;
-        //public HomeController(ApplicationDbContext applicationDbContext)
-        //{
-        //    dbContext = applicationDbContext;
-        //}
-    
-        private readonly ILogger<HomeController> _logger;
-        private IConfiguration Configuration;
-
-
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
+        private AppSettings Configuration;
+       private readonly ILogger<HomeController> _logger;
+        private IRepositoryWrapper repository;
+        public HomeController(ILogger<HomeController> logger, IOptions<AppSettings> settings, IRepositoryWrapper repositoryWrapper)
         {
-            _logger = logger;
-            Configuration = configuration;
+         _logger = logger;
+            Configuration = settings.Value;
+            repository = repositoryWrapper;
         }
 
+       
         public async Task<IActionResult> Merge()  //method
         {
-            var mergedService = $"{Configuration["mergedServiceURL"]}/merge";
-            //var mergedService = "https://localhost:44327/merge";
+            var mergedService = $"{Configuration.mergedServiceURL}/merge";
             var mergeResponseCall = await new HttpClient().GetStringAsync(mergedService);
             ViewBag.responseCall = mergeResponseCall;
 
@@ -54,8 +49,8 @@ namespace FrontEnd.Controllers
                 FirstName = bindingModel.FirstName,
                 LastName = bindingModel.LastName
             };
-            //dbContext.UserInput.Add(userToCreate);
-            //dbContext.SaveChanges();
+            repository.UserInput.Create(userToCreate);
+            repository.Save();
             ViewBag.FirstName = userToCreate.FirstName;
             ViewBag.LastName = userToCreate.LastName;
             return RedirectToAction("Merge");

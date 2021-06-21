@@ -11,7 +11,7 @@ namespace Numbers.Controllers
     [Route("[controller]")]
     public class NumbersController : ControllerBase
     {
-        private static readonly int[] Numbers = new[]
+        public int[] Numbers = new[]
          {
             1,2,3,4,5
         };
